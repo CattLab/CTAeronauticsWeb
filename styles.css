@@ -1,0 +1,149 @@
+/* Base styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+a {
+  color: #6ec6ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+}
+
+header nav a {
+  margin-left: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+header nav a:hover {
+  color: #6ec6ff;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Billboard fade carousel */
+.billboard {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.billboard-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeAnimation 30s infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.billboard-image:nth-child(1) { animation-delay: 0s; }
+.billboard-image:nth-child(2) { animation-delay: 5s; }
+.billboard-image:nth-child(3) { animation-delay: 10s; }
+.billboard-image:nth-child(4) { animation-delay: 15s; }
+.billboard-image:nth-child(5) { animation-delay: 20s; }
+.billboard-image:nth-child(6) { animation-delay: 25s; }
+
+@keyframes fadeAnimation {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  25%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Planes grid */
+.plane-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Plane cards with beveling */
+.plane-card {
+  background-color: #1e1e1e;
+  overflow: hidden;
+  box-shadow: inset -2px -2px 4px rgba(255,255,255,0.1),
+              inset 2px 2px 4px rgba(0,0,0,0.7),
+              0 0 8px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.plane-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 4px solid #6ec6ff;
+}
+
+.plane-card h3,
+.plane-card p {
+  margin: 1rem;
+}
+
+.plane-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
